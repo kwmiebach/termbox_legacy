@@ -1,4 +1,16 @@
-## IMPORTANT
+
+# Termbox Legacy
+
+While this fork has been renamed as Termbox Legacy, it is important to note that the internal naming conventions within the codebase will be retained for the sake of compatibility with existing projects.
+
+For a seamless transition, and to maintain proximity to the original library, clone this repository using the following command:
+`git clone https://github.com/kwmiebach/termbox_legacy termbox`
+
+This ensures that even the project directory mirrors that of the original.
+
+**From the README of the last known commit of the original https://github.com/nfs/termbox project:**
+
+IMPORTANT
 
 This library is no longer maintained. It's pretty small if you have a big
 project that relies on it, just maintain it yourself. Or look for forks. Or look
