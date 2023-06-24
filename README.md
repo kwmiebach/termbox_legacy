@@ -38,8 +38,20 @@ really a thing termbox is aimed at. But rather pseudo-graphical user interfaces.
 
 ### Installation
 
-Termbox comes with a waf-based build scripts. In order to configure, build and
-install it, do the following::
+Termbox comes with a waf-based build scripts.
+
+You need to install python3 and sudo first.
+
+If a `python` symlink (without 3 at the end) is not present on
+the system, you need to create one:
+
+`sudo ln -s /usr/bin/python3 /usr/bin/python`
+
+This is needed in the build process.
+
+
+In order to configure, build and
+install, do the following::
 
 ```
 ./waf configure --prefix=/usr                                (configure)
