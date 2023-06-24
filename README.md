@@ -113,6 +113,32 @@ tb_poll_event() // wait for a keyboard event
 
 See src/termbox.h header file for full detail.
 
+### Docker
+
+Include something like this in your Dockerfile. The example
+is taken from a Dockerfile based on `elixir:1.14.1`:
+
+```
+USER root
+WORKDIR /opt
+# waf wants python, python3 should work.
+# it also uses sudo, so install it too.
+RUN apt-get update && apt-get install -y python3 sudo \
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && git clone https://github.com/nsf/termbox.git \
+    && cd termbox \
+    && ./waf configure \
+    && ./waf \
+    && sudo ./waf install
+
+# The sudo ./waf install command is supposed to
+# install the header files to the appropriate system directory
+# (typically /usr/local/include), but to make sure they
+# are correctly installed, you can explicitly copy them:
+# RUN cp src/termbox.h /usr/local/include/
+RUN chmod 644 /usr/local/include/termbox.h
+```
+
 ### Links
 
 If you want me to add your Termbox project here, send me a pull request or drop
