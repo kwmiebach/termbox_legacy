@@ -130,6 +130,8 @@ RUN apt-get update && apt-get install -y python3 sudo \
     && ./waf configure \
     && ./waf \
     && sudo ./waf install
+# To use termbox_legacy replace the git clone command above with:
+#   && git clone https://github.com/kwmiebach/termbox_legacy termbox \
 
 # The sudo ./waf install command is supposed to
 # install the header files to the appropriate system directory
